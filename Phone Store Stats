@@ -1,0 +1,17 @@
+# SQL
+SQL Portfolio
+
+#Creating a table called phone and creating columns 
+CREATE TABLE phone (id Integer Primary Key, name text, rating integer, color text, price integer); 
+
+#Putting values into the columns 
+INSERT INTO phone VALUES(1, "Blackberry", 3, "black", 99), (2, "iphone", 8, "red", 150), (3, "iphone", 9, "blue", 150), (4, "samsung", 6, "red", 130), (5, "iphone", 8, "white", 150), (6, "google", 2, "purple", 300), (7, "iphone", 8, "black", 150), (8, "google", 5, "orange", 200), (9, "flip phone", 1, "black", 40), (10, "LG", 8, "pink", 135), (11, "LG", 6, "white", 130), (12, "razor", 2, "red", 80), (13, "razor", 2, "silver", 80), (14, "nokia", 2, "gray", 30), (15, "motorala", 5, "black", 90);
+
+#grab all the information from the iphones 
+SELECT * From phone Where name = "iphone"; 
+
+#grabbing the rating of the phones by descending order
+Select name from phone order by rating desc; 
+
+#again grabbing the rating and name information and putting in order by rating 
+select name, rating from phone order by rating; 
