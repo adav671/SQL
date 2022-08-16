@@ -1,0 +1,18 @@
+#We are going to grabbing a customer's ID that is either living in New York or Oregon from the sales table and then grabbing the order ID, order date and product's name associated with that customer from the forms table and then ordering that information by order's date in descending order.  
+
+SELECT 
+  order_id, order_date, product_name AS product, customer_id 
+FROM  
+  customer.forms AS forms 
+WHERE
+  customer_id IN (
+     SELECT 
+        customer_id
+     FROM 
+        customer.sales AS sales 
+     WHERE 
+        location = "New York" OR "Oregon" 
+   )
+ORDER BY 
+  order_date; 
+ 
