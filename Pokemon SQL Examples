@@ -1,0 +1,19 @@
+** Data pulled from (https://gist.github.com/pamelafox/26b9357c6120d3d0d27c2b90c950e8c6) - pokemon stats 
+
+SELECT AVG(HP) AS HP_status from pokemon;
+
+SELECT MIN(Speed) AS Min_Speed from pokemon WHERE Speed < 100;
+
+SELECT MAX(Attack) AS Attack_force from pokemon WHERE Attack >= 60; 
+
+SELECT Name FROM pokemon
+WHERE Speed > 120 and Attack > 100
+GROUP BY Name
+HAVING COUNT(Number >100); 
+
+SELECT Number, Name
+CASE
+    WHEN Speed > 100 THEN 'This Pokemon is fast'
+    WHEN Speed < 99 AND < 70 THEN 'This Pokemon has moderate speed'
+    ELSE 'This Pokemon is slow'
+END AS "Pokemon_Speed_Ranks" FROM pokemon;
